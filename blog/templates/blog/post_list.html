@@ -7,16 +7,12 @@
             <h1><a href="">Jardel Blog</a></h1>
         </div>
 
-        <div>
-            <p>publicado: </p>
-            <h2><a href="">Meu primeiro post</a> </h2>
-            <p>Alguma coisa</p>
-        </div>
-
-        <div>
-            <p>publicado: </p>
-            <h2><a href="">Outre post</a></h2>
-            <p>Outra coisa</p>
-        </div>
+        {% for post in posts %}
+		    <div>
+				<h1><a href="">{{ post.title }}</a></h1>
+				<p>publicado: {{ post.published_date}}</p>
+				<p>{{ post.tex|linebreaksbr}}</p>
+		    </div>
+		{% endfor %}
 	</body>
 </html>
